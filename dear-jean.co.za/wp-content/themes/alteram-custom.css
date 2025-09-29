@@ -1,0 +1,215 @@
+/* Alteram Solutions Custom Color Scheme - Dark Blue, Orange, White */
+
+:root {
+  --alteram-dark-blue: #1e3a5f;
+  --alteram-orange: #ff6b35;
+  --alteram-light-blue: #3498db;
+  --alteram-white: #ffffff;
+  --alteram-gray: #f8f9fa;
+}
+
+/* Primary Color Overrides */
+body {
+  background-color: var(--alteram-white);
+  color: var(--alteram-dark-blue);
+}
+
+/* Header styling */
+#header-outer {
+  background-color: var(--alteram-dark-blue) !important;
+}
+
+#header-outer #top nav > ul li a {
+  color: var(--alteram-white) !important;
+}
+
+#header-outer #top nav > ul li a:hover {
+  color: var(--alteram-orange) !important;
+}
+
+/* Button styling */
+.nectar-button, .button, .btn {
+  background-color: var(--alteram-orange) !important;
+  border-color: var(--alteram-orange) !important;
+  color: var(--alteram-white) !important;
+}
+
+.nectar-button:hover, .button:hover, .btn:hover {
+  background-color: var(--alteram-dark-blue) !important;
+  border-color: var(--alteram-dark-blue) !important;
+}
+
+/* Section backgrounds */
+.wpb_row.vc_row-fluid.vc_row.full-width-section:nth-child(odd) {
+  background-color: var(--alteram-gray) !important;
+}
+
+/* Hero section */
+#page-header-bg, .nectar-slider-wrap {
+  background: linear-gradient(135deg, var(--alteram-dark-blue) 0%, var(--alteram-light-blue) 100%) !important;
+}
+
+#page-header-bg h1, #page-header-bg h2, #page-header-bg p,
+.nectar-slider-wrap h1, .nectar-slider-wrap h2, .nectar-slider-wrap p {
+  color: var(--alteram-white) !important;
+}
+
+/* Text colors */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--alteram-dark-blue) !important;
+}
+
+.accent-color, .accent-color a {
+  color: var(--alteram-orange) !important;
+}
+
+/* Navigation active states */
+#header-outer #top nav > ul li.current-menu-item a,
+#header-outer #top nav > ul li.current-menu-ancestor a {
+  color: var(--alteram-orange) !important;
+}
+
+/* WhatsApp Button Styling */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  background-color: #20ba5a;
+  transform: scale(1.1);
+  color: #fff;
+  text-decoration: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Partner Logo Carousel */
+.partner-logos-section {
+  background-color: var(--alteram-gray);
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.partner-logos-container {
+  display: flex;
+  align-items: center;
+  animation: scrollLogos 30s linear infinite;
+  gap: 60px;
+}
+
+.partner-logo {
+  height: 60px;
+  width: auto;
+  filter: grayscale(100%) opacity(0.7);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Drone Video Section */
+.drone-video-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--alteram-dark-blue);
+}
+
+.drone-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+}
+
+.drone-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 58, 95, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.drone-video-content {
+  text-align: center;
+  color: var(--alteram-white);
+  z-index: 3;
+}
+
+.drone-video-content h2 {
+  color: var(--alteram-white) !important;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.drone-video-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Service cards styling */
+.service-card {
+  background: var(--alteram-white);
+  border-left: 5px solid var(--alteram-orange);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  padding: 30px;
+  margin: 20px 0;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-left-color: var(--alteram-dark-blue);
+}
