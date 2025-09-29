@@ -26,8 +26,14 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         # If empty path, serve the main site
         if not path or path == '/':
             path = 'dear-jean.co.za/index.html'
+        else:
+            # For all other paths, try to find them in the dear-jean.co.za directory first
+            dear_jean_path = os.path.join('dear-jean.co.za', path)
+            if os.path.exists(dear_jean_path):
+                self.path = '/' + dear_jean_path
+                return super().do_GET()
         
-        # Check if path exists as-is
+        # Check if path exists as-is (original behavior)
         if os.path.exists(path):
             self.path = '/' + path
             return super().do_GET()
@@ -45,7 +51,7 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.path = '/' + html_path
             return super().do_GET()
         
-        # Default handling
+        # Default handling (will return 404 if not found)
         return super().do_GET()
 
 class ReusableTCPServer(socketserver.TCPServer):
